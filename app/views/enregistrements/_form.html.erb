@@ -1,0 +1,28 @@
+<%= form_for(@enregistrement) do |f| %>
+
+  <% if @enregistrement.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@enregistrement.errors.count, "error") %> prohibited this enregistrement from being saved:</h2>
+
+      <ul>
+      <% @enregistrement.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+<%= f.hidden_field :programme_id, :value => params[:idProgramme] %>
+  <h1> Enregistrer : <%= Programme.find(params[:idProgramme]).libelle %> </h1>
+  <table>
+    <tr class = "entete">
+      <th>Marge avant</th>
+      <th>Marge après</th>
+      <th></th>
+    </tr>
+    <tr class = "table1">
+      <td><%= f.number_field :marge_avant, :class=>"marge" %> minutes</td>
+      <td><%= f.number_field :marge_apres, :class=>"marge" %> minutes</td>
+      <td><%= f.submit 'Enregistrer', :class=>"btn btn-primary btn-attribute" %> </td>
+    </tr>
+  </table>
+<% end %>

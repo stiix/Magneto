@@ -1,0 +1,9 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  marge_avant: 1
+  marge_apres: 1
+
+two:
+  marge_avant: 1
+  marge_apres: 1

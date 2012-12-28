@@ -1,0 +1,28 @@
+<h1>Liste des personnes</h1>
+<table>
+  <tr class = "entete">
+    <th>Nom</th>
+    <th>Prenom</th>
+    <th>Surnom</th>
+    <th>Type de personne</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+<% compteur = 0 %>
+<% @personnes.each do |personne| %>
+<% compteur = compteur + 1 %>
+  <tr class = "table<%= compteur%2 %>">
+    <td><%= personne.nom %></td>
+    <td><%= personne.prenom %></td>
+    <td><%= personne.surnom %></td>
+    <td><%= personne.type_personne.libelle %></td>
+    <td><%= link_to 'Afficher', personne, :class=>"btn btn-primary btn-attribute" %></td>
+    <td><%= link_to 'Modifier', edit_personne_path(personne), :class=>"btn btn-primary btn-modifier" %></td>
+    <td><%= link_to 'Supprimer', personne, confirm: 'Are you sure?', method: :delete,  :class=>"btn btn-primary btn-supprimer" %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+<%= link_to 'Nouvelle personne', new_personne_path,  :class=>"btn btn-primary btn-large"  %>

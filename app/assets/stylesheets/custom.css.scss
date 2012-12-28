@@ -1,0 +1,195 @@
+@import "bootstrap";
+@import url(http://fonts.googleapis.com/css?family=Lato|Fjalla+One);
+
+html,body,div {
+	margin:0;
+	padding:0;
+	height:100%;
+}
+body {
+	background: url("bg.png") !important;
+}
+#global {
+	width: 900px;
+	margin-left: auto;
+	margin-right: auto;
+	background: rgba(0,0,0,0.2);
+	min-height: 150%;
+	position: relative;
+	border-left: 1px solid #888;
+	border-right: 1px solid #888;
+	padding-top: 10px;
+}
+#header {
+	width:900px;
+	height:80px;
+	background: rgba(0,0,0,0.2);
+	margin-top: -25px;
+	border-bottom: 1px solid #555;
+}
+#header h1 {
+	font-size: 30px;
+	margin-top: 15px;
+	margin-bottom: 0px;
+	margin-left: 20px;
+	padding-top: 10px;
+	font-family: 'Fjalla One';
+}
+#header h2 {
+	font-size: 12px;
+	color: #BBB;
+	margin-top:-10px;
+	padding-left: 40px;
+	font-family: 'Lato';
+}
+#contenu {
+	padding-left: 20px;
+	padding-right: 20px;
+}
+h1 {
+	font-family: 'Fjalla One';
+	font-size:24px;
+}
+h2 {
+	font-family: 'Fjalla One';
+	font-size: 18px;
+	color: #333;
+}
+
+a, a:visited {
+	color:white !important;
+}
+
+.btn-attribute {
+	background-image: -moz-linear-gradient(top, #00CC00, #269926);
+	background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#00CC00), to(#269926));
+	background-image: -webkit-linear-gradient(top, #00CC00, #269926);
+	background-image: -o-linear-gradient(top, #00CC00, #269926);
+	background-image: linear-gradient(to bottom, #00CC00, #269926);
+	background-repeat: repeat-x;
+	border-color: #555;
+}
+.btn-attribute:hover {
+	background-color:#269926;
+}
+
+.btn-modifier {
+	background-image: -moz-linear-gradient(top, #08C, #04C);
+	background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#08C), to(#04C));
+	background-image: -webkit-linear-gradient(top, #08C, #04C);
+	background-image: -o-linear-gradient(top, #08C, #04C);
+	background-image: linear-gradient(to bottom, #08C, #04C);
+	background-repeat: repeat-x;
+	border-color: #04C #04C #002A80;
+}
+.btn-modifier:hover {
+	background-color:#04C;
+}
+
+.btn-supprimer {
+	background-image: -moz-linear-gradient(top, #FF0000, #A60000);
+	background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#FF0000), to(#A60000));
+	background-image: -webkit-linear-gradient(top, #FF0000, #A60000);
+	background-image: -o-linear-gradient(top, #FF0000, #A60000);
+	background-image: linear-gradient(to bottom, #FF0000, #A60000);
+	background-repeat: repeat-x;
+	border-color: #555;
+}
+.btn-supprimer:hover {
+	background-color:#A60000;
+}
+
+.headerBouton {
+	background-image: -moz-linear-gradient(top, #777, #888);
+	background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#777), to(#888));
+	background-image: -webkit-linear-gradient(top, #777, #888);
+	background-image: -o-linear-gradient(top, #777, #888);
+	background-image: linear-gradient(to bottom, #777, #888);
+	background-repeat: repeat-x;
+	border-color: #555;
+	float:right;
+	margin-top:-70px;
+	margin-right: 20px;
+	font-size: 14px;
+	line-height: 12px;
+}
+.headerBouton:hover {
+	background-position: 0px -100px;
+	background-color:#888;
+}
+
+.headerEnregistrement {
+	background-image: -moz-linear-gradient(top, #FF0000, #A60000);
+	background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#FF0000), to(#A60000));
+	background-image: -webkit-linear-gradient(top, #FF0000, #A60000);
+	background-image: -o-linear-gradient(top, #FF0000, #A60000);
+	background-image: linear-gradient(to bottom, #FF0000, #A60000);
+	background-repeat: repeat-x;
+	border-color: #555;
+	float:right;
+	margin-top:-70px;
+	margin-right: 170px;
+	font-size: 14px;
+	line-height: 12px;
+}
+.headerEnregistrement:hover {
+	background-position: 0px -100px;
+	background-color:#A60000;
+}
+
+.titreTableau {
+	margin-bottom: 20px;
+	border-spacing: 2px;
+	border:1px solid #555;
+	background-color: rgba(0,0,0,0.2);
+	padding:10px;
+}
+th {
+	margin-bottom: 20px;
+	border-spacing: 2px;
+	border:none;
+	border-top: 1px solid #555;
+	background-color: rgba(0,0,0,0.1);
+	padding:10px;
+	font-family: 'Fjalla One';
+	font-size: 16px;
+}
+.entete {
+	border-right:1px solid #555;
+	border-left:1px solid #555;
+}
+
+.table0 {
+	margin-bottom: 20px;
+	border-spacing: 2px;
+	border:1px solid #555;
+	background-color: rgba(0,0,0,0.1);
+	padding:10px;
+}
+
+.table1 {
+	margin-bottom: 20px;
+	border-spacing: 2px;
+	border:1px solid #555;
+	background-color: rgba(0,0,0,0.2);
+	padding:10px;
+}
+
+td {
+	padding:10px;
+	font-family: 'Lato' !important;
+	font-size: 20px !important;
+	font-weight: normal !important;
+}
+.petitTd {
+	font-size: 16px !important;
+}
+.grandTd {
+	font-family: "Time news roman" !important;
+}
+.marge {
+	width:50px;
+}
+.tf1 {
+	background : url("tf1.png");
+}

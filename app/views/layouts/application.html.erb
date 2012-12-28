@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Magnétoscope | Projet</title>
+  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+<div id = "global">
+	<div id = "header">
+		<h1> Gestion d'un magnétoscope | Projet RoR </h1>
+		<h2> Thomas Van Schel | Thibault Noël </h2>
+		<%= link_to 'Administrateur', { :controller=>:admin }, :class=>"btn btn-primary btn-large headerBouton" %>	
+		<%= link_to 'Enregistrements', { :controller=>:enregistrements }, :class=>"btn btn-primary btn-large headerEnregistrement" %>	
+
+	</div>
+	<div id = "contenu">
+<%= yield %>
+	</div>
+</div>
+</body>
+</html>

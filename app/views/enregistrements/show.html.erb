@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Marge avant:</b>
+  <%= @enregistrement.marge_avant %>
+</p>
+
+<p>
+  <b>Marge apres:</b>
+  <%= @enregistrement.marge_apres %>
+</p>
+
+
+<%= link_to 'Edit', edit_enregistrement_path(@enregistrement) %> |
+<%= link_to 'Back', enregistrements_path %>

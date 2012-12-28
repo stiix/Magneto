@@ -1,0 +1,24 @@
+<h1>Liste des enregistrements</h1>
+
+<table>
+  <tr class="entete">
+    <th>Programme</th>
+    <th>Début</th>
+    <th>Fin</th>
+    <th>Marge avant</th>
+    <th>Marge apres</th>
+    <th></th>
+  </tr>
+<% compteur = 0 %>
+<% @enregistrements.each do |enregistrement| %>
+<% compteur = compteur + 1 %>
+  <tr class = "table<%= compteur%2 %>">
+    <td><%= enregistrement.programme.libelle %></td>
+    <td><%= enregistrement.programme.debut.strftime('%H:%M') %></td>
+    <td><%= enregistrement.programme.fin.strftime('%H:%M') %></td>    
+    <td><%= enregistrement.marge_avant %> minutes</td>
+    <td><%= enregistrement.marge_apres %> minutes</td>
+    <td><%= link_to 'Supprimer', enregistrement, confirm: 'Are you sure?', method: :delete,  :class=>"btn btn-primary btn-supprimer" %></td>
+  </tr>
+<% end %>
+</table>

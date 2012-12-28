@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Nom:</b>
+  <%= @personne.nom %>
+</p>
+
+<p>
+  <b>Prenom:</b>
+  <%= @personne.prenom %>
+</p>
+
+<p>
+  <b>Surnom:</b>
+  <%= @personne.surnom %>
+</p>
+
+<p>
+	<b>Type de personne: </b>
+    <%= @personne.type_personne.libelle %>
+</p>
+
+<%= link_to 'Edit', edit_personne_path(@personne) %> |
+<%= link_to 'Back', personnes_path %>

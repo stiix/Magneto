@@ -1,0 +1,41 @@
+<%= form_for(@programme) do |f| %>
+  <% if @programme.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@programme.errors.count, "error") %> prohibited this programme from being saved:</h2>
+
+      <ul>
+      <% @programme.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :debut %><br />
+    <%= f.datetime_select :debut %>
+  </div>
+  <div class="field">
+    <%= f.label :fin %><br />
+    <%= f.datetime_select :fin %>
+  </div>
+  <div class="field">
+    <%= f.label :libelle %><br />
+    <%= f.text_field :libelle %>
+  </div>
+  <div class="field">
+    <%= f.collection_select :chaine_id, Chaine.order("numero").all, :id, :nom %>
+  </div>
+  <!--
+  <div class="field">
+      <% Personne.all.each do |personne| %>
+      <label><%= personne.nom %>
+        <%= check_box_tag "programme[personne_ids][]", personne.id, @programme.personnes.include?(personne) %>
+      </label>
+    <% end %>
+  </div>
+  -->
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

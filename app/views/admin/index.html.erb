@@ -1,0 +1,24 @@
+<h1> Interface administrateur </h1>
+<% compteur = 0 %>
+<table>
+	<tr class = "entete">
+		<th> Description du module </th>
+		<th> </th>
+	</tr>
+	<tr class = "table1"> 
+		<td> Ajout, modification et suppression des chaînes de télévision. </td> 
+		<td> <%= link_to "Chaînes", chaines_path, :class=>"btn btn-primary" %> </td>
+	</tr>
+	<tr class = "table0"> 
+		<td> Permet de gérer les programmes, les attacher à une chaîne... </td> 
+		<td> <%= link_to "Programmes", programmes_path, :class=>"btn btn-primary" %> </td>
+	</tr>
+	<tr class = "table1"> 
+		<td> Création, édition et suppression de personnes. </td> 
+		<td> <%= link_to "Personnes", personnes_path, :class=>"btn btn-primary" %> </td>
+	</tr>
+	<tr class = "table0"> 
+		<td> Création des types de personnes. </td> 
+		<td> <%= link_to "Types", type_personnes_path, :class=>"btn btn-primary" %> </td>
+	</tr>
+</table>

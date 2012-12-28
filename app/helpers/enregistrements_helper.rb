@@ -1,0 +1,2 @@
+module EnregistrementsHelper
+end

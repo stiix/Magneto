@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  debut: 2012-12-23
+  fin: 2012-12-23
+  libelle: MyString
+
+two:
+  debut: 2012-12-23
+  fin: 2012-12-23
+  libelle: MyString

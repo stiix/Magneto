@@ -1,0 +1,30 @@
+<h1> <%= @programme.libelle %> </h1>
+<h2> Informations </h2>
+<table>
+	<tr class = "entete">
+		<th>Chaîne</th>
+		<th>Début</th>
+		<th>Fin</th>
+	</tr>
+	<tr class = "table1">
+		<td class = "grandTd"> <%= @programme.chaine.nom %> </td>
+		<td class = "petitTd"> <%= @programme.debut.strftime('%d/%m/%Y - %H:%M') %> </td>
+		<td class = "petitTd"> <%= @programme.fin.strftime('%d/%m/%Y - %H:%M') %> </td>
+	</tr>
+</table>
+<h2> Casting </h2>
+<table>
+	<tr class = "entete">
+		<th>Nom</th>
+		<th>Prénom</th>
+		<th>Surnom</th>
+	</tr>
+<% compteur = 1 %>
+<% PersonnesProgramme.where(:programme_id=>@programme.id).each do |casting| %>
+      <tr class = "table<%= compteur%2 %>">
+		<td class = "petitTd"> <%= casting.personne.nom %> </td>
+		<td class = "petitTd"> <%= casting.personne.prenom %> </td>
+		<td class = "petitTd"> <%= casting.personne.surnom %> </td>
+	</tr>
+<% compteur = compteur +1 %>
+<% end %>

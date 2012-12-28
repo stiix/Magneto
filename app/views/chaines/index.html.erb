@@ -1,0 +1,26 @@
+<h1>Liste des chaines</h1>
+
+<table>
+  <tr class = "entete">
+    <th>Nom</th>
+    <th>Numero</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+<% compteur = 0 %>
+<% @chaines.each do |chaine| %>
+<% compteur = compteur + 1 %>
+  <tr class = "table<%= compteur%2 %>">
+    <td><%= chaine.nom %></td>
+    <td><%= chaine.numero %></td>
+    <td><%= link_to 'Afficher', chaine,  :class=>"btn btn-primary btn-attribute"  %></td>
+    <td><%= link_to 'Modifier', edit_chaine_path(chaine),  :class=>"btn btn-primary btn-modifier"  %></td>
+    <td><%= link_to 'Supprimer', chaine, confirm: 'Are you sure?', method: :delete,  :class=>"btn btn-primary btn-supprimer"  %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'Nouvelle chaine', new_chaine_path,  :class=>"btn btn-primary btn-large"  %>
