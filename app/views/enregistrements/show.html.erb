@@ -1,15 +1,4 @@
-<p id="notice"><%= notice %></p>
-
-<p>
-  <b>Marge avant:</b>
-  <%= @enregistrement.marge_avant %>
-</p>
-
-<p>
-  <b>Marge apres:</b>
-  <%= @enregistrement.marge_apres %>
-</p>
-
-
-<%= link_to 'Edit', edit_enregistrement_path(@enregistrement) %> |
-<%= link_to 'Back', enregistrements_path %>
+<h1> Enregistrement du programme : <%= @enregistrement.programme.libelle %> </h1>
+<h2> Début : <%= @enregistrement.marge_avant %> minutes avant <%= @enregistrement.programme.debut.strftime('%H:%M') %> </h2>
+<h2> Fin : <%= @enregistrement.marge_apres %> minutes après <%= @enregistrement.programme.fin.strftime('%H:%M') %> </h2>
+<%= link_to 'Revenir à l\'accueil', { :controller=>:home }, :class=>"btn btn-primary btn-chaine" %>  

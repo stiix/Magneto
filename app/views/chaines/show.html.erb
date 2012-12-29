@@ -3,11 +3,13 @@
 
 <% compteur = 0 %>
 <% programmes = Programme.order(:debut).all(:conditions => {:chaine_id=>@chaine.id } ) %>
+<% if !programmes.blank?  %>
 <% dateBase = programmes[0].debut.advance(:days => -1) %>
 <% programmes.each do |programme| %>
 <% compteur = compteur + 1 %>
   <% if dateBase.strftime('%d/%m/%Y') != programme.debut.strftime('%d/%m/%Y') %>
     </table>
+    <% compteur = 1 %>
     <h2> <%= programme.debut.strftime('%A %d %B %Y') %> </h1>
     <table>
       <tr class = "entete">
@@ -21,7 +23,7 @@
         <td class = "petitTd"><%= programme.debut.strftime('%d/%m/%Y - %H:%M') %></td>
         <td class = "petitTd"><%= programme.fin.strftime('%d/%m/%Y - %H:%M') %></td>
         <td class = "grandTd"><%= programme.libelle %></td>
-        <td><%= link_to 'Consulter le casting', {:controller=>:programmes, :action=>'show', :id=>programme.id}, :class=>"btn btn-primary btn-attribute" %>
+        <td><%= link_to 'Consulter le casting', {:controller=>:programmes, :action=>'show', :id=>programme.id}, :class=>"btn btn-primary btn-chaine" %>
         <td><%= link_to 'Enregistrer', {:controller=>:enregistrements, :action=>'new', :idProgramme =>programme.id}, :class=>"btn btn-primary btn-attribute" %>
 </td>
       </tr>
@@ -31,9 +33,17 @@
         <td class = "petitTd"><%= programme.debut.strftime('%d/%m/%Y - %H:%M') %></td>
         <td class = "petitTd"><%= programme.fin.strftime('%d/%m/%Y - %H:%M') %></td>
         <td class = "grandTd"><%= programme.libelle %></td>
-        <td><%= link_to 'Consulter le casting', {:controller=>:programmes, :action=>'show', :id=>programme.id}, :class=>"btn btn-primary btn-attribute" %>
+        <td><%= link_to 'Consulter le casting', {:controller=>:programmes, :action=>'show', :id=>programme.id}, :class=>"btn btn-primary btn-chaine" %>
         <td><%= link_to 'Enregistrer', {:controller=>:enregistrements, :action=>'new', :idProgramme =>programme.id}, :class=>"btn btn-primary btn-attribute" %>
 
       </tr>
   <% end %>
+<% end %>
+</table>
+<br/>
+<%= link_to 'Revenir à l\'accueil', { :controller=>:home }, :class=>"btn btn-primary btn-chaine" %>  
+<% else %>
+<h2> Désolé, cette chaîne ne contient aucun programme pour le moment. </h2>
+<%= link_to 'Revenir à l\'accueil', { :controller=>:home }, :class=>"btn btn-primary btn-chaine" %>  
+
 <% end %>

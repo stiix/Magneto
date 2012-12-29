@@ -6,9 +6,11 @@
 <% compteur = compteur + 1 %>
   <% if dateBase.strftime('%d/%m/%Y') != programme.debut.strftime('%d/%m/%Y') %>
     </table>
+    <% compteur = 1 %>
     <h2> <%= programme.debut.strftime('%A %d %B %Y') %> </h1>
     <table>
       <tr class = "entete">
+        <th>Chaîne</th>
         <th>Debut</th>
         <th>Fin</th>
         <th>Libelle</th>
@@ -17,6 +19,7 @@
         <th></th>
       </tr>
       <tr class = "table<%= compteur%2 %>">
+        <td class = "petitTd"><%= programme.chaine.nom %></td>
         <td class = "petitTd"><%= programme.debut.strftime('%d/%m/%Y - %H:%M') %></td>
         <td class = "petitTd"><%= programme.fin.strftime('%d/%m/%Y - %H:%M') %></td>
         <td class = "grandTd"><%= programme.libelle %></td>
@@ -27,6 +30,7 @@
     <% dateBase = programme.debut %>
   <% else %>
       <tr class = "table<%= compteur%2 %>">
+        <td class = "petitTd"><%= programme.chaine.nom %></td>        
         <td class = "petitTd"><%= programme.debut.strftime('%d/%m/%Y - %H:%M') %></td>
         <td class = "petitTd"><%= programme.fin.strftime('%d/%m/%Y - %H:%M') %></td>
         <td class = "grandTd"><%= programme.libelle %></td>

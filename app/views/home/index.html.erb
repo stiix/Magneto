@@ -1,16 +1,23 @@
-<h1>Accueil</h1>
+<h1>Comment enregistrer une émission ?</h1>
+<h2>1) Choisissez une chaîne parmi la liste suivante : </h2>
 <table>
-  <tr class = "entete">
-    <th style = "width:400px;">Nom</th>
-    <th></th>
-  </tr>
-<% compteur = 0 %>
+<% compteurLigne = 0 %>
 <% chaines = Chaine.all %>
+<tr class = "table1">
 <% chaines.each do |chaine| %>
-<% compteur = compteur + 1 %>
-  <tr class = "table<%= compteur%2 %>">
-    <td style = "font-weight:bold; text-align:center;"><%= chaine.nom %></td>
-    <td><%= link_to 'Consulter les programmes', chaine,  :class=>"btn btn-primary btn-attribute"  %></td>
+	<% if compteurLigne == 5 %>
+		<% compteurLigne = 0 %>
+		</tr>
+  		<tr class = "table1">
+	<% end %>
+    <td style = "text-align:center;"><%= link_to chaine.nom, chaine,  :class=>"btn btn-primary btn-chaine"  %></td>
+	<% compteurLigne = compteurLigne + 1 %>
 <% end %>
 </table>
 <br/>
+
+<h2>2) Sélectionnez un programme qui vous intéresse et appuyez sur enregistrer (image d'exemple) :</h2>
+<%= image_tag("exempleProgramme.png") %>
+
+<h2>3) Déterminez la marge précédant et suivant l'enregistrement, et validez ! </h2>
+<h2>4) Vous pouvez retrouver la liste des programmes choisis grâce au bouton situé en haut de la page. </h2>

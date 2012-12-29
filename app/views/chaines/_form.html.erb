@@ -11,15 +11,17 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :nom %><br />
-    <%= f.text_field :nom %>
-  </div>
-  <div class="field">
-    <%= f.label :numero %><br />
-    <%= f.number_field :numero %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+  <table>
+    <tr class = "entete">
+      <th> <%= f.label :nom %></th>
+      <th> <%= f.label :numero %></th>
+      <th></th>
+    </tr>
+    <tr class = "table1">
+      <td> <%= f.text_field :nom %> </td>
+      <td> <%= f.number_field :numero %> </td>
+      <td> <%= f.submit :class=>"btn btn-primary btn-chaine" %> </td>
+    </tr>
+  </table>
 <% end %>
+<%= link_to 'Interface administrateur', { :controller=>:admin }, :class=>"btn btn-primary btn-chaine" %>  

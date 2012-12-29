@@ -11,31 +11,35 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :debut %><br />
-    <%= f.datetime_select :debut %>
-  </div>
-  <div class="field">
-    <%= f.label :fin %><br />
-    <%= f.datetime_select :fin %>
-  </div>
-  <div class="field">
-    <%= f.label :libelle %><br />
-    <%= f.text_field :libelle %>
-  </div>
-  <div class="field">
-    <%= f.collection_select :chaine_id, Chaine.order("numero").all, :id, :nom %>
-  </div>
-  <!--
-  <div class="field">
-      <% Personne.all.each do |personne| %>
-      <label><%= personne.nom %>
-        <%= check_box_tag "programme[personne_ids][]", personne.id, @programme.personnes.include?(personne) %>
-      </label>
-    <% end %>
-  </div>
-  -->
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+  <table>
+    <tr class = "entete">
+      <th> <%= f.label :debut %></th>
+    </tr>
+    <tr class = "table1">
+      <td> <%= f.datetime_select :debut %> </td>
+    </tr>
+  </table>
+  <br/>
+  <table>
+    <tr class = "entete">
+      <th> <%= f.label :fin %></th>
+    </tr>
+    <tr class = "table1">
+      <td> <%= f.datetime_select :fin %> </td>
+    </tr>
+  </table>
+  <br/>
+  <table>
+    <tr class = "entete">
+      <th> <%= f.label :libelle %></th>
+      <th> <%= f.label :chaine_id %></th>
+    </tr>
+    <tr class = "table1">
+      <td> <%= f.text_field :libelle %> </td>
+      <td> <%= f.collection_select :chaine_id, Chaine.order("numero").all, :id, :nom %> </td>
+    </tr>
+  </table>
+  <br/>
+  <%= f.submit :class=>"btn btn-primary btn-chaine" %>
 <% end %>
+<%= link_to 'Interface administrateur', { :controller=>:admin }, :class=>"btn btn-primary btn-chaine" %>  

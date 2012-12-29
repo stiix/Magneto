@@ -13,19 +13,19 @@ body {
 	width: 900px;
 	margin-left: auto;
 	margin-right: auto;
-	background: rgba(0,0,0,0.2);
+	background: rgba(0,0,0,0.4);
 	min-height: 150%;
 	position: relative;
-	border-left: 1px solid #888;
-	border-right: 1px solid #888;
+	border-left: 1px solid black;
+	border-right: 1px solid black;
 	padding-top: 10px;
 }
 #header {
 	width:900px;
 	height:80px;
-	background: rgba(0,0,0,0.2);
+	background: rgb(224,217,25);
 	margin-top: -25px;
-	border-bottom: 1px solid #555;
+	border-bottom: 1px solid black;
 }
 #header h1 {
 	font-size: 30px;
@@ -34,6 +34,7 @@ body {
 	margin-left: 20px;
 	padding-top: 10px;
 	font-family: 'Fjalla One';
+	color:black;
 }
 #header h2 {
 	font-size: 12px;
@@ -41,6 +42,8 @@ body {
 	margin-top:-10px;
 	padding-left: 40px;
 	font-family: 'Lato';
+	color:#555;
+	letter-spacing: -1px;
 }
 #contenu {
 	padding-left: 20px;
@@ -49,11 +52,12 @@ body {
 h1 {
 	font-family: 'Fjalla One';
 	font-size:24px;
+	color:#CCC;
 }
 h2 {
 	font-family: 'Fjalla One';
 	font-size: 18px;
-	color: #333;
+	color: #999;
 }
 
 a, a:visited {
@@ -99,14 +103,25 @@ a, a:visited {
 	background-color:#A60000;
 }
 
+.btn-chaine {
+	min-width: 100px;
+	background-image: -moz-linear-gradient(top, #3b6496, #688ab5);
+	background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#3b6496), to(#688ab5));
+	background-image: -webkit-linear-gradient(top, #3b6496, #688ab5);
+	background-image: -o-linear-gradient(top, #3b6496, #688ab5);
+	background-image: linear-gradient(to bottom, #3b6496, #688ab5);
+}
+.btn-chaine:hover {
+	background-color: #688ab5;
+}
 .headerBouton {
-	background-image: -moz-linear-gradient(top, #777, #888);
-	background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#777), to(#888));
-	background-image: -webkit-linear-gradient(top, #777, #888);
-	background-image: -o-linear-gradient(top, #777, #888);
-	background-image: linear-gradient(to bottom, #777, #888);
+	background-image: -moz-linear-gradient(top, #999, #AAA);
+	background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#999), to(#aaa));
+	background-image: -webkit-linear-gradient(top, #999, #AAA);
+	background-image: -o-linear-gradient(top, #999, #AAA);
+	background-image: linear-gradient(to bottom, #999, #AAA);
 	background-repeat: repeat-x;
-	border-color: #555;
+	border-color: #888;
 	float:right;
 	margin-top:-70px;
 	margin-right: 20px;
@@ -115,7 +130,7 @@ a, a:visited {
 }
 .headerBouton:hover {
 	background-position: 0px -100px;
-	background-color:#888;
+	background-color:#AAA;
 }
 
 .headerEnregistrement {
@@ -134,7 +149,7 @@ a, a:visited {
 }
 .headerEnregistrement:hover {
 	background-position: 0px -100px;
-	background-color:#A60000;
+	background-color:rgba(166,0,0,0.8);
 }
 
 .titreTableau {
@@ -149,10 +164,11 @@ th {
 	border-spacing: 2px;
 	border:none;
 	border-top: 1px solid #555;
-	background-color: rgba(0,0,0,0.1);
+	background-color: rgba(0,0,0,0.8);
 	padding:10px;
 	font-family: 'Fjalla One';
 	font-size: 16px;
+	color:#999;
 }
 .entete {
 	border-right:1px solid #555;
@@ -163,16 +179,18 @@ th {
 	margin-bottom: 20px;
 	border-spacing: 2px;
 	border:1px solid #555;
-	background-color: rgba(0,0,0,0.1);
+	background-color: rgba(0,0,0,0.8);
 	padding:10px;
+	color:#DDD;
 }
 
 .table1 {
 	margin-bottom: 20px;
 	border-spacing: 2px;
 	border:1px solid #555;
-	background-color: rgba(0,0,0,0.2);
+	background-color: rgba(30,30,30,0.8);
 	padding:10px;
+	color:#DDD;
 }
 
 td {
@@ -190,6 +208,12 @@ td {
 .marge {
 	width:50px;
 }
-.tf1 {
-	background : url("tf1.png");
+select {
+	width:110px;
+}
+#programme_debut_1i, #programme_fin_1i,#programme_debut_3i, #programme_debut_4i, #programme_debut_5i,#programme_fin_3i, #programme_fin_4i, #programme_fin_5i {
+	width:70px;
+}
+input[type=number] {
+	width:40px;
 }
